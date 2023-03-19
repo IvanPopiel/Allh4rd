@@ -1,0 +1,184 @@
+.contPc {
+    .tittlePcArmadas {
+        @extend .estilosTitulosCompartidos;
+        text-align: center;
+        @media(min-width:$MQD){
+            margin-top: 50px;
+        }
+        @media (min-width:$MQDXL) {
+            margin-top: 75px;
+            padding-bottom: 75px;
+        }
+    }
+
+    .containerButton {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media(min-width:$MQD) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @media(min-width:$MQDXL){
+            justify-content: center;
+        }
+
+        .buttonPc {
+            @include tamaño(80%, 50px);
+            margin: 8px 0;
+            border: none;
+            border-radius: 10px;
+
+            @media(min-width:$MQD) {
+                width: 250px;
+
+                &:hover {
+                    border: 1px solid $rojitoPaleta;
+                }
+
+                &:hover .aButton {
+                    color: $rojitoPaleta;
+                    font-size: 22px;
+                    transition: all 0.3s;
+                    font-weight: bold;
+                }
+            }
+            @media(min-width:$MQDXL){
+                margin: 0 20px;
+            }
+            .aButton {
+                        text-decoration: none;
+                        font-family: $roboto;
+                        text-transform: uppercase;
+                        font-size: 20px;
+                        color: $negroPaleta;
+                    }
+        }
+
+        
+    }
+}
+
+.containerPcs {
+    margin-top: 50px;
+    @include tamaño(100%, auto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+
+    @media(min-width:$MQT) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+    @media(min-width:$MQDXL) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto;
+    }
+
+    .marcoPc {
+        @include tamaño(400px, 600px);
+        background-color: $blanco;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: none;
+        border-radius: 7px;
+
+        @media(min-width:$MQT) {
+            @include tamaño(350px, 520px);
+        }
+
+        @media(min-width:$MQD) {
+            @include tamaño(285px, 470px);
+
+        }
+        a{
+            .imgPc1 {
+                @media(min-width:$MQT) {
+                    display: none;
+                }
+            }
+            .imgPc2 {
+                display: none;
+    
+                @media(min-width:$MQT) {
+                    display: block;
+                }
+    
+                @media(min-width: $MQD) {
+                    display: none;
+                }
+            }
+            .imgPc3 {
+                display: none;
+    
+                @media(min-width: $MQD) {
+                    display: block;
+                }
+            }
+        }
+        
+        .tituloProducto {
+            @include tamaño(100%, 45px);
+            text-align: center;
+            
+            @media(min-width: $MQT) {
+                width: 90%;
+            }
+        }
+
+        .valorProducto {
+            font-size: 26px;
+        }
+
+        .buttonAgregar {
+            @include tamaño(90%, 50px);
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 4px;
+            margin: 8px 0;
+            border-radius: 10px;
+            border: 2px solid $rojitoPaleta;
+            background-color: $blanco;
+            color: $negroPaleta;
+
+            @media(min-width:$MQD) {
+                margin-right: 10px;
+                width: 80%;
+
+                &:hover {
+                    width: 90%;
+                    background-color: $rojitoPaleta;
+                    border: 2px solid $blanco;
+                    transition: all 0.4s;
+                    cursor: pointer;
+                    
+                }
+
+                &:hover .agregar {
+                    color: $blanco;
+                }
+            }
+
+            .carro {
+                @include tamaño(32px, 32px);
+                margin-right: 5px;
+            }
+
+            .agregarCarrito {
+
+                font-size: 23px;
+                text-transform: uppercase;
+                margin-left: 5px;
+            }
+        }
+    }
+
+}
